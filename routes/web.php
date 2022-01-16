@@ -19,3 +19,6 @@ Route::get('/', function () {
 });
 
 Route::name('lista')->get('/',[escuela::class, 'lista']);
+Route::name('lista')->get('/registrar',[escuela::class, 'lista']);
+
+Route::post('registrar','App\Http\Controllers\escuela@insert')->name('registrar');

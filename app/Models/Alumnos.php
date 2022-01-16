@@ -22,6 +22,6 @@ class Alumnos extends Model
         "created_at",
         "updated_at"
     ];
-    protected $hidden = ['created_at', 'updated_at'];
+    protected $hidden = ['foto', 'id_grupo', 'created_at', 'updated_at'];
     public $sequence = null;
 }
