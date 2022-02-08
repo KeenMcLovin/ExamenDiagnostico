@@ -72,6 +72,7 @@
                         <td>Nombre</td>
                         <td>Fecha de nacimiento</td>
                         <td>Genero</td>
+                        <td>Opciones</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -81,6 +82,15 @@
                             <td>{{$item->nombre}}</td>
                             <td>{{$item->fechaNacimiento}}</td>
                             <td>{{$item->gen}}</td>
+                            <td>
+                                <a href="{{ route('detalle',['id' => $item->id]) }}"><button class="btn btn-info"><b style="color:white;">Detalle</b></button></a>
+                                <a href="{{ route('editar',['id' => $item->id]) }}"><button class="btn btn-warning"><b style="color:white;">Editar</b></button></a>
+                                <a href="{{ route('borrar',['id' => $item->id]) }}"><button class="btn btn-warning"><b style="color:white;">Eliminar</b></button></a>
+                                <form action="{{ route('borrar',['id' => $item->id]) }}" method="POST" name="borrar">
+                                    @csrf
+                                    <button class="btn btn-warning">Eliminar</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
