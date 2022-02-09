@@ -40,6 +40,6 @@ Route::name('borar')->delete('borrar/{id}',[escuela::class, 'borrar']);
 
 Route::post('registrar','App\Http\Controllers\escuela@insert')->name('registrar');
 
-Route::get('/', function () {
+Route::get('/ejemplo', function () {
     return view('ejemplo');
 });
